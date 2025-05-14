@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ————— Cores de Fundo ————— */
+  --ui-bg-base: #f8f8f8;
+  --ui-bg-paper: #ececec;
+  --ui-bg-soft: #e4f5f1;
+  --ui-bg-warm: #fff5a5;
+  --ui-bg-cool: #d0f4de;
+  --ui-bg-accent: #e4c1f9;
+
+  /* ————— Texto ————— */
+  --ui-text-base: #222222;
+  --ui-text-muted: #555555;
+  --ui-text-inverse: #ffffff;
+
+  /* ————— Botões ————— */
+  --ui-btn-primary: #f2b5d4;
+  --ui-btn-primary-hover: #e4a2c1;
+  --ui-btn-secondary: #a0c4ff;
+  --ui-btn-secondary-hover: #8bb2e8;
+
+  /* ————— Bordas / Divisores ————— */
+  --ui-border-light: #cccccc;
+  --ui-border-medium: #bbbbbb;
+  --ui-border-strong: #aaaaaa;
+
+  /* ————— Sombras ————— */
+  --ui-shadow-light: rgba(0, 0, 0, 0.05);
+  --ui-shadow-base: rgba(0, 0, 0, 0.1);
+  --ui-shadow-heavy: rgba(0, 0, 0, 0.2);
+}
+
+body,
+header,
+main,
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--ui-bg-cool);
+}
+
+/* PADRÃO DAS "PÁGINAS" */
+.tela {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* NOME DO JOGO */
+.nome-jogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 10vh;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+
+  font-family: "Pixelify Sans", sans-serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: weight;
+
+  letter-spacing: 2px;
+  color: var(--ui-text-base);
+
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #fff;
+
+  background-color: var(--ui-bg-cool);
+}
+
+@media (min-width: 769px) {
+  .nome-jogo {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1025px) {
+  .nome-jogo {
+    font-size: 2rem;
+  }
+}
+
+/* MENU */
+.container-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: auto;
+}
+
+.opcoes-menu {
+  list-style: none;
+
+  justify-items: center;
+  width: 100%;
+}
+/* Botões do Menu */
+.botao-menu {
+  background-color: var(--ui-btn-primary);
+  border: none;
+  border-radius: 8px;
+
+  width: 20rem;
+  height: 5rem;
+  margin: 1rem auto;
+
+  font-size: 1.2rem;
+  font-weight: bolder;
+  font-family: "Pixelify Sans", sans-serif;
+  color: var(--cor-texto-padrao);
+  text-transform: uppercase;
+
+  box-shadow: 0 4px 8px var(--ui-shadow-light);
+  transition: transform 0.2 ease;
+}
+
+.botao-menu:hover {
+  transform: scale(1.05);
+  background-color: var(--ui-btn-primary-hover);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .botao-menu {
+    width: 25rem;
+    height: 6rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .botao-menu {
+    width: 35rem;
+    height: 8rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .botao-menu {
+    width: 72rem;
+    height: 14rem;
+  }
+}
+
+/* ——————— JOGO ———————— */
+.painel-info {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0.5rem;
+
+  font-family: "Mulish", sans-serif;
+  color: var(--ui-text-base);
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  border-bottom: 2px solid var(--ui-border-medium);
+  background-color: var(--ui-bg-accent);
+}
+
+.jogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  padding: 1rem;
+
+  background-color: var(--ui-bg-cool);
+}
+
+.container-bolas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  width: 100%;
+  height: 60vh;
+
+  background-color: var(--ui-bg-accent);
+}
+
+.bola {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: grab;
+  position: absolute;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container-potes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 20vh;
+  width: 100%;
+
+  background-color: var(--ui-bg-accent);
+}
+
+.pote {
+  width: 70px;
+  height: 90px;
+
+  position: relative;
+
+  border-radius: 0 0 12px 12px;
+  box-shadow: inset 0 5px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--ui-bg-base);
+  border: 2px solid var(--ui-border-strong);
+}
+
+.bola.arrastando {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.bola.colocada {
+  background-color: gray;
+  pointer-events: none;
+}
+
+/*  ————— FOOTER  ————— */
+.container-footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  width: 100%;
+
+  background-color: var(--ui-footer-bg);
+  color: var(--ui-text-inverse);
+}
+
+.container-footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: var(--ui-text-inverse);
+  margin: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #footer {
+    padding: 1rem 0.5rem;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+  }
+}

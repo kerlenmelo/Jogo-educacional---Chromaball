@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="./js/main.js"></script>
+    <title>Chromaball</title>
+  </head>
+  <body>
+    <header>
+      <div class="nome-jogo">
+        <h1>Chromaball</h1>
+      </div>
+    </header>
+    <main>
+      <!-- MENU -->
+      <div id="menu" class="container-menu">
+        <ul class="opcoes-menu">
+          <li>
+            <button type="button" id="botao-jogar" class="botao-menu">
+              Jogar
+            </button>
+          </li>
+          <li>
+            <button type="button" id="botao-pontuacoes" class="botao-menu">
+              Pontuações
+            </button>
+          </li>
+          <li>
+            <button type="button" id="botao-opcoes" class="botao-menu">
+              Opções
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- JOGO -->
+      <div id="painel-jogo" class="tela">
+        <div class="painel-info">
+          <div id="pontos">Pontos</div>
+          <div id="fase">Fase</div>
+          <div id="tempo">Tempo:</div>
+        </div>
+
+        <div id="jogo" class="jogo">
+          <div id="container-bolas" class="container-bolas"></div>
+          <div id="container-potes" class="container-potes"></div>
+        </div>
+      </div>
+
+      <!-- PONTUAÇÕES -->
+      <div id="tabela-pontuacoes" class="tela">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Jogador</th>
+              <th scope="col">Pontuação</th>
+              <th scope="col">Fase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Nelrek</th>
+              <td>300</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- OPÇÕES -->
+      <div id="opcoes" class="tela"></div>
+    </main>
+    <footer>
+      <div class="container-footer">
+        <p>&copy; 2025 Kerlen Melo - Todos os direitos reservados.</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/kerlenmelo" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/kerlenmelo" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
