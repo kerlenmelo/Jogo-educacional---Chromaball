@@ -44,7 +44,7 @@ footer {
   background-color: var(--ui-bg-cool);
 }
 
-/* PADRÃO DAS "PÁGINAS" */
+/* ——————— PADRÃO DAS PÁGINAS ———————— */
 .tela {
   visibility: hidden;
   position: absolute;
@@ -54,7 +54,7 @@ footer {
   height: 100%;
 }
 
-/* NOME DO JOGO */
+/* ——————— NOME DO JOGO ———————— */
 .nome-jogo {
   display: flex;
   flex-direction: column;
@@ -91,7 +91,7 @@ footer {
   }
 }
 
-/* MENU */
+/* ——————— MENU ———————— */
 .container-menu {
   display: flex;
   flex-direction: column;
@@ -236,6 +236,17 @@ footer {
 .bola.colocada {
   background-color: gray;
   pointer-events: none;
+}
+
+/* ——————— FIM DE JOGO ———————— */
+.container-fim-jogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: auto;
 }
 
 /*  ————— FOOTER  ————— */
