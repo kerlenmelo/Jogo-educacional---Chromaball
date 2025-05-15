@@ -114,11 +114,11 @@ footer {
   border: none;
   border-radius: 8px;
 
-  width: 20rem;
+  width: 15rem;
   height: 5rem;
   margin: 1rem auto;
 
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: bolder;
   font-family: "Pixelify Sans", sans-serif;
   color: var(--cor-texto-padrao);
@@ -143,15 +143,15 @@ footer {
 
 @media (min-width: 1025px) {
   .botao-menu {
-    width: 35rem;
-    height: 8rem;
+    width: 25rem;
+    height: 5rem;
   }
 }
 
 @media (min-width: 2560px) {
   .botao-menu {
-    width: 72rem;
-    height: 14rem;
+    width: 30rem;
+    height: 8rem;
   }
 }
 
@@ -247,6 +247,38 @@ footer {
 
   width: 100%;
   height: auto;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  background-color: var(--ui-bg-soft);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--ui-shadow-heavy);
+}
+
+.container-fim-jogo h2 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: bolder;
+
+  color: var(--ui-text-base);
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 0 #fff;
+
+  margin-bottom: 0.5rem;
+}
+
+.painel-fim p {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+
+  color: var(--ui-text-base);
+
+  margin: 1rem 0;
 }
 
 /*  ————— FOOTER  ————— */

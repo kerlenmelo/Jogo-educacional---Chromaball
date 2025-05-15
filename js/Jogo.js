@@ -21,7 +21,6 @@ export default class Jogo {
       '#D0F4DE',
       '#FEC8D8',
       '#F8C8DC',
-      '#E4C1F9',
       '#A9DEF9',
       '#EDE7B1',
       '#F7DAD9',
@@ -30,17 +29,19 @@ export default class Jogo {
       '#FFFACD',
       '#D6E9F8',
     ];
-    this.bolasColocadas = 0;
     this.intervaloTempo = null;
   }
 
   iniciar() {
+    this.fase = 1;
+    this.pontos = 0;
+    this.tempo = 180;
+    clearInterval(this.intervaloTempo);
     this.iniciarFase();
     this.contarTempo();
   }
 
   iniciarFase() {
-    this.bolasColocadas = 0;
     const coresSelecionadas = this.selecionarCores(this.fase + 2);
     this.bolinhas = this.criarBolinhas(coresSelecionadas, this.fase + 4);
     this.potes = this.criarPotes(coresSelecionadas);
@@ -117,5 +118,11 @@ export default class Jogo {
     return cores.map((cor) => new Pote(cor));
   }
 
-  fimDeJogo() {}
+  fimDeJogo() {
+    window.dispatchEvent(
+      new CustomEvent('fimDeJogo', {
+        detail: { fase: this.fase, pontos: this.pontos },
+      })
+    );
+  }
 }
