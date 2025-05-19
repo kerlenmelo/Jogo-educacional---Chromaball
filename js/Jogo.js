@@ -20,7 +20,6 @@ export default class Jogo {
       '#FFFFFC',
       '#D0F4DE',
       '#FEC8D8',
-      '#F8C8DC',
       '#A9DEF9',
       '#EDE7B1',
       '#F7DAD9',
@@ -67,17 +66,28 @@ export default class Jogo {
   }
 
   contarTempo() {
+    const start = performance.now();
+    const totalMs = this.tempo * 1000;
+
+    if (this.intervaloTempo) clearInterval(this.intervaloTempo);
+
     this.intervaloTempo = setInterval(() => {
-      this.tempo--;
+      const elapsed = performance.now() - start;
+      const segundosRestantes = Math.max(
+        0,
+        Math.ceil((totalMs - elapsed) / 1000)
+      );
+
+      this.tempo = segundosRestantes;
 
       const textoTempo = document.getElementById('tempo');
       textoTempo.textContent = `Tempo: ${this.formatarTempo(this.tempo)}`;
 
-      if (this.tempo <= 0) {
+      if (segundosRestantes <= 0) {
         clearInterval(this.intervaloTempo);
         this.fimDeJogo();
       }
-    }, 1000);
+    }, 100);
   }
 
   formatarTempo(segundos) {
