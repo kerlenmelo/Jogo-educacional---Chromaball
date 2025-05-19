@@ -55,14 +55,25 @@
         </div>
       </div>
 
+      <!-- FIM DE JOGO -->
       <div id="fim-jogo" class="tela">
         <div class="container-fim-jogo">
           <h2>Fim de jogo!</h2>
           <div id="fim-jogo-info" class="painel-fim"></div>
-          <button type="button" id="botao-restart" class="botao-menu">
-            Restart
-          </button>
-          <button type="button" id="botao-menu" class="botao-menu">Menu</button>
+
+          <div id="salvar-placar">
+            <input type="text" id="input-nome" placeholder="Seu nome" />
+            <button type="submit" id="botao-salvar">Salvar</button>
+          </div>
+
+          <div id="botoes-pos-salvamento" class="tela">
+            <button type="button" id="botao-restart" class="botao-menu">
+              Restart
+            </button>
+            <button type="button" id="botao-menu" class="botao-menu">
+              Menu
+            </button>
+          </div>
         </div>
       </div>
 
@@ -76,15 +87,10 @@
               <th scope="col">Fase</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Nelrek</th>
-              <td>300</td>
-              <td>15</td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
+      <button id="botao-limpar-placar" class="tela">Limpar Pontuações</button>
 
       <!-- OPÇÕES -->
       <div id="opcoes" class="tela"></div>

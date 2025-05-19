@@ -20,11 +20,20 @@ function main() {
   });
 
   botaoPontuacoes.addEventListener('click', () => {
-    const tabelaPontuacoes = document.getElementById('tabela-pontuacoes');
     const menu = document.getElementById('menu');
+    const tabelaPontuacoes = document.getElementById('tabela-pontuacoes');
+
     menu.classList.add('tela');
     tabelaPontuacoes.classList.remove('tela');
-    exibirPontuacoes();
+
+    exibirPontuacoes(tabelaPontuacoes);
+
+    const botaoLimparPlacar = document.getElementById('botao-limpar-placar');
+    botaoLimparPlacar.classList.remove('tela');
+    botaoLimparPlacar.addEventListener(
+      'click',
+      limplarPlacar(botaoLimparPlacar, tabelaPontuacoes)
+    );
   });
 
   botaoOpcoes.addEventListener('click', () => {
@@ -153,8 +162,30 @@ function gerarPotes(containerPotes, jogo) {
 /** PONTUAÇÕES
  *
  */
-function exibirPontuacoes() {
-  console.log('O botão de Pontuações foi clicado.');
+function exibirPontuacoes(tabelaPontuacoes) {
+  const tabela = JSON.parse(localStorage.getItem('chromaballScores')) || [];
+  tabela.sort((a, b) => b.pontos - a.pontos);
+
+  const tbody = tabelaPontuacoes.querySelector('tbody');
+  tbody.innerHTML = '';
+
+  tabela.forEach(({ nome, pontos, fase }) => {
+    const tr = document.createElement('tr');
+
+    tr.innerHTML = `
+      <td>${nome}</td>
+      <td>${pontos}</td>
+      <td>${fase}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function limplarPlacar(botaoLimparPlacar, tabelaPontuacoes) {
+  botaoLimparPlacar.onclick = () => {
+    localStorage.removeItem('chromaballScores');
+    exibirPontuacoes(tabelaPontuacoes);
+  };
 }
 
 /** OPÇOES
@@ -183,6 +214,25 @@ window.addEventListener('fimDeJogo', (evento) => {
 
   infoFimDeJogo.appendChild(infoPontos);
   infoFimDeJogo.appendChild(infoFase);
+
+  const salvarPlacar = document.getElementById('salvar-placar');
+  const inputNome = document.getElementById('input-nome');
+  const botaoSalvar = document.getElementById('botao-salvar');
+  const botoesPosSalvamento = document.getElementById('botoes-pos-salvamento');
+
+  botaoSalvar.addEventListener('click', (e) => {
+    e.preventDefault();
+    const nome = inputNome.value.trim() || 'Anônimo';
+    const tabela = JSON.parse(localStorage.getItem('chromaballScores')) || [];
+    tabela.push({
+      nome,
+      fase,
+      pontos,
+    });
+    localStorage.setItem('chromaballScores', JSON.stringify(tabela));
+    salvarPlacar.classList.add('tela');
+    botoesPosSalvamento.classList.remove('tela');
+  });
 
   const botaoRestart = document.getElementById('botao-restart');
   const botaoMenu = document.getElementById('botao-menu');
