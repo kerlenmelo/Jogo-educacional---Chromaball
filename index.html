@@ -40,10 +40,17 @@
           </li>
         </ul>
       </div>
-
       <!-- JOGO -->
       <div id="painel-jogo" class="tela">
         <div class="painel-info">
+          <button
+            type="button"
+            id="botao-home-jogo"
+            class="botao-home"
+            title="Voltar ao menu"
+          >
+            <img src="./assets/icons/home.svg" alt="Home" />
+          </button>
           <div id="pontos">Pontos</div>
           <div id="fase">Fase</div>
           <div id="tempo">Tempo:</div>
@@ -79,6 +86,14 @@
 
       <!-- PONTUAÇÕES -->
       <div id="tabela-pontuacoes" class="tela">
+        <button
+          type="button"
+          id="botao-home-pontuacoes"
+          class="botao-home"
+          title="Voltar ao menu"
+        >
+          <img src="./assets/icons/home.svg" alt="Home" />
+        </button>
         <table>
           <thead>
             <tr>
@@ -90,7 +105,14 @@
           <tbody></tbody>
         </table>
       </div>
-      <button id="botao-limpar-placar" class="tela">Limpar Pontuações</button>
+      <button
+        type="reset"
+        id="botao-limpar-placar"
+        class="botao-delete tela"
+        title="Apagar pontuações"
+      >
+        <img src="./assets/icons/delete.svg" alt="Deletar" />Apagar
+      </button>
 
       <!-- OPÇÕES -->
       <div id="opcoes" class="tela"></div>
