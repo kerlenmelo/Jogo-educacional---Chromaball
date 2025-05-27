@@ -242,6 +242,7 @@ window.addEventListener('fimDeJogo', (evento) => {
 
   const botaoSalvar = document.getElementById('botao-salvar');
   const botoesPosSalvamento = document.getElementById('botoes-pos-salvamento');
+  botoesPosSalvamento.classList.add('tela');
 
   botaoSalvar.addEventListener('click', () => {
     const nome = inputNome.value.trim() || 'Anônimo';
