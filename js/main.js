@@ -8,6 +8,8 @@ function main() {
   const botaoJogar = document.getElementById('botao-jogar');
   const botaoPontuacoes = document.getElementById('botao-pontuacoes');
   const botaoOpcoes = document.getElementById('botao-opcoes');
+  const botaoHomeJogo = document.getElementById('botao-home-jogo');
+  const botaoHomePontuacoes = document.getElementById('botao-home-pontuacoes');
 
   botaoJogar.addEventListener('click', () => {
     const painelJogo = document.getElementById('painel-jogo');
@@ -42,6 +44,24 @@ function main() {
     menu.classList.add('tela');
     opcoes.classList.remove('tela');
     exibirOpcoes();
+  });
+
+  botaoHomeJogo.addEventListener('click', () => {
+    const painelJogo = document.getElementById('painel-jogo');
+    const menu = document.getElementById('menu');
+
+    painelJogo.classList.add('tela');
+    menu.classList.remove('tela');
+
+    jogo.iniciar();
+    renderizarJogo(jogo);
+  });
+
+  botaoHomePontuacoes.addEventListener('click', () => {
+    const tabelaPontuacoes = document.getElementById('tabela-pontuacoes');
+    const menu = document.getElementById('menu');
+    tabelaPontuacoes.classList.add('tela');
+    menu.classList.remove('tela');
   });
 }
 /** JOGO
