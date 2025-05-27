@@ -2,6 +2,14 @@
 
 **Chromaball** é um jogo educacional simples desenvolvido para revisar conceitos fundamentais de **HTML**, **CSS** e **JavaScript**. O jogo envolve bolinhas coloridas e potes que devem ser organizados de acordo com suas cores, oferecendo uma forma divertida de exercitar a lógica e o uso de tecnologias web puras.
 
+## Jogo Online
+
+Você pode testar o jogo diretamente online na seguinte URL:
+
+[**Chromaball no Vercel**](https://jogo-educacional-chromaball.vercel.app)
+
+**Substitua o link acima pelo URL real do seu projeto no Vercel.**
+
 ## Objetivo do Jogo
 
 O objetivo do jogo é arranjar bolinhas coloridas nos potes correspondentes. Cada bolinha tem uma cor específica e você deve arrastá-las para o pote de mesma cor.
