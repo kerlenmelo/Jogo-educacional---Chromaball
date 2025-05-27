@@ -91,24 +91,7 @@ footer {
   }
 }
 
-/* ——————— MENU ———————— */
-.container-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: auto;
-}
-
-.opcoes-menu {
-  list-style: none;
-
-  justify-items: center;
-  width: 100%;
-}
-/* Botões do Menu */
+/* ——————— BOTÕES ———————— */
 .botao-menu {
   background-color: var(--ui-btn-primary);
   border: none;
@@ -121,7 +104,7 @@ footer {
   font-size: 1.8rem;
   font-weight: bolder;
   font-family: "Pixelify Sans", sans-serif;
-  color: var(--cor-texto-padrao);
+  color: var(--ui-text-base);
   text-transform: uppercase;
 
   box-shadow: 0 4px 8px var(--ui-shadow-light);
@@ -155,12 +138,70 @@ footer {
   }
 }
 
+.botao-home,
+.botao-delete {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background-color: var(--ui-btn-primary);
+  border: none;
+  border-radius: 8px;
+
+  padding: 0.5rem;
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--ui-text-inverse);
+
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--ui-shadow-light);
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-home:hover,
+.botao-delete:hover {
+  background-color: var(--ui-btn-primary-hover);
+  transform: scale(1.05);
+  outline: none;
+}
+
+.botao-home img,
+.botao-delete img {
+  width: 25px;
+  height: 25px;
+}
+
+.painel-info .botao-home {
+  background-color: var(--ui-bg-accent);
+  box-shadow: 0 4px 8px var(--ui-shadow-base);
+  margin-left: 1rem;
+}
+
+/* ——————— MENU ———————— */
+.container-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: auto;
+}
+
+.opcoes-menu {
+  list-style: none;
+
+  justify-items: center;
+  width: 100%;
+}
+
 /* ——————— JOGO ———————— */
 .painel-info {
   display: flex;
-  flex-direction: row;
-  justify-items: flex-start;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 0.5rem;
 
@@ -171,6 +212,13 @@ footer {
 
   border-bottom: 2px solid var(--ui-border-medium);
   background-color: var(--ui-bg-accent);
+}
+
+.painel-status {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-evenly;
+  flex-grow: 1;
 }
 
 .jogo {
