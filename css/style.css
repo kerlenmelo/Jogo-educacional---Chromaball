@@ -329,6 +329,49 @@ footer {
   margin: 1rem 0;
 }
 
+/*  ————— PONTUAÇÕES  ————— */
+.tabela {
+  width: 100%;
+  padding: 1rem;
+
+  background-color: var(--ui-bg-cool);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--ui-shadow-light);
+}
+
+.tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1rem 0;
+}
+
+.tabela th,
+.tabela td {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--ui-text-base);
+  border: 1px solid var(--ui-border-medium);
+}
+
+.tabela th {
+  background-color: var(--ui-bg-accent);
+  color: var(--ui-text-inverse);
+}
+
+.tabela td {
+  background-color: var(--ui-bg-base);
+}
+
+.tabela tr:nth-child(even) td {
+  background-color: var(--ui-bg-soft);
+}
+
+.tabela tr:hover {
+  background-color: var(--ui-bg-warm);
+}
+
 /*  ————— FOOTER  ————— */
 .container-footer {
   text-align: center;
