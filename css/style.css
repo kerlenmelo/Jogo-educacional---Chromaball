@@ -329,6 +329,83 @@ footer {
   margin: 1rem 0;
 }
 
+.placar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 300px;
+
+  margin-top: 1.5rem;
+
+  gap: 1rem;
+}
+
+.placar input[type="text"] {
+  width: 100%;
+
+  padding: 0.8rem 1rem;
+
+  font-family: "Mulish", sans-serif;
+  font-size: 1.2rem;
+  color: var(--ui-text-base);
+
+  border: 2px solid var(--ui-border-medium);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px var(--ui-shadow-light);
+  background-color: var(--ui-bg-base);
+  transition: border-color 0.2s ease;
+}
+
+.placar input[type="text"]::placeholder {
+  color: var(--ui-text-muted);
+}
+
+.placar input[type="text"]:focus {
+  outline: none;
+  border-color: var(--ui-btn-secondary);
+}
+
+.placar .botao-salvar {
+  width: 100%;
+  height: 3.5rem;
+
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: "Pixelify Sans", sans-serif;
+  color: var(--ui-text-inverse);
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--ui-shadow-base);
+  background-color: var(--ui-btn-secondary);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.salvar-placar .botao-salvar:hover {
+  transform: scale(1.02);
+  background-color: var(--ui-btn-secondary-hover);
+}
+
+@media (min-width: 500px) {
+  .salvar-placar {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .salvar-placar input[type="text"] {
+    width: 200px;
+  }
+
+  .salvar-placar .botao-salvar {
+    width: 100px;
+  }
+}
+
 /*  ————— PONTUAÇÕES  ————— */
 .tabela {
   width: 100%;

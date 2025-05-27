@@ -236,12 +236,14 @@ window.addEventListener('fimDeJogo', (evento) => {
   infoFimDeJogo.appendChild(infoFase);
 
   const salvarPlacar = document.getElementById('salvar-placar');
+  salvarPlacar.classList.remove('tela');
+
   const inputNome = document.getElementById('input-nome');
+
   const botaoSalvar = document.getElementById('botao-salvar');
   const botoesPosSalvamento = document.getElementById('botoes-pos-salvamento');
 
-  botaoSalvar.addEventListener('click', (e) => {
-    e.preventDefault();
+  botaoSalvar.addEventListener('click', () => {
     const nome = inputNome.value.trim() || 'Anônimo';
     const tabela = JSON.parse(localStorage.getItem('chromaballScores')) || [];
     tabela.push({
@@ -250,6 +252,9 @@ window.addEventListener('fimDeJogo', (evento) => {
       pontos,
     });
     localStorage.setItem('chromaballScores', JSON.stringify(tabela));
+
+    inputNome.value = '';
+
     salvarPlacar.classList.add('tela');
     botoesPosSalvamento.classList.remove('tela');
   });
