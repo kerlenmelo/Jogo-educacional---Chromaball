@@ -4,11 +4,13 @@
 
 ## Jogo Online
 
+Veja abaixo um exemplo da tela inicial do jogo:
+
+![Menu inicial do jogo](./assets/images/tela-inicial.png)
+
 Você pode testar o jogo diretamente online na seguinte URL:
 
 [**Chromaball no Vercel**](https://jogo-educacional-chromaball.vercel.app)
-
-**Substitua o link acima pelo URL real do seu projeto no Vercel.**
 
 ## Objetivo do Jogo
 
